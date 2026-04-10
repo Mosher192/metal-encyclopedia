@@ -48,158 +48,63 @@ const GENRE_TREE = {
 };
 
 const LOCAL_BANDS = {
-  "slayer": { name: "Slayer", country: "USA", years: "1981-2019", status: "Disbanded", genre: "Thrash Metal", overview: "One of thrash metal's Big Four. Defined extreme thrash with raw aggression and occult themes that set the standard for everything that followed.", genreDetail: "Blistering speed, chaotic solos, screaming vocals, war-inspired lyrics. The heaviest of the Big Four by a wide margin.", albums: [{ title: "Reign in Blood", year: 1986, note: "29 minutes of pure aggression. Thrash metal's holy grail." },{ title: "Seasons in the Abyss", year: 1990, note: "Perfect balance of accessibility and brutality." },{ title: "South of Heaven", year: 1988, note: "Slower, darker, atmospheric. Underrated masterpiece." },{ title: "Hell Awaits", year: 1985, note: "Proto-death metal before death metal existed." },{ title: "Show No Mercy", year: 1983, note: "The debut. Raw NWOBHM meets punk aggression." }], members: [{ name: "Tom Araya", role: "Bass & Vocals (1981-2019)", contribution: "That scream. The most iconic vocal moment in thrash. Also one of metal's most underrated bassists." },{ name: "Kerry King", role: "Guitar (1981-2019)", contribution: "Chaotic, atonal solos that became a Slayer signature — technically wrong but unmistakably effective." },{ name: "Jeff Hanneman", role: "Guitar (1981-2013, d. 2013)", contribution: "The genius. Wrote Angel of Death, Raining Blood, South of Heaven, Seasons in the Abyss." },{ name: "Dave Lombardo", role: "Drums (1981-92, 2001-13)", contribution: "Invented thrash drumming. His double-bass on Reign in Blood redefined what was physically possible." }], similar: ["Kreator","Exodus","Sodom","Dark Angel","Demolition Hammer"], influences: { inspired_by: ["Venom","Iron Maiden","Judas Priest"], influenced: ["Cannibal Corpse","Lamb of God","Machine Head"] }, funfacts: ["Jeff Hanneman wrote Angel of Death from historical research on Mengele. Band branded as Nazi sympathizers — Araya is Chilean, King is half Latino.","Rick Rubin produced Reign in Blood but Columbia refused to distribute it.","Lombardo was fired mid-tour via fax machine.","Tom Araya is a devout Catholic who goes to church on Sundays."] },
-  "meshuggah": { name: "Meshuggah", country: "Sweden", years: "1987-present", status: "Active", genre: "Progressive/Djent", overview: "Invented djent and revolutionized modern metal with polyrhythmic, mathematical riff structures. Arguably the most influential metal band of the 2000s.", genreDetail: "Polymetric rhythms, 8-string guitars, mechanical precision. A machine that became self-aware and angry.", albums: [{ title: "Destroy Erase Improve", year: 1995, note: "Jazz fusion meets mechanical brutality." },{ title: "Chaosphere", year: 1998, note: "Pure aggression. Minimalist and crushing." },{ title: "Nothing", year: 2002, note: "8-string guitars first time. Heavy as gravity." },{ title: "obZen", year: 2008, note: "Bleed — one of metal's most iconic riffs." },{ title: "Koloss", year: 2012, note: "Every note weighs a ton." }], members: [{ name: "Jens Kidman", role: "Vocals (1987-present)", contribution: "Staccato bark-like delivery, rhythmically precise as the instruments." },{ name: "Fredrik Thordendal", role: "Lead Guitar (1987-present)", contribution: "Jazz-fusion solos like alien transmissions. Created the djent tone." },{ name: "Tomas Haake", role: "Drums (1990-present)", contribution: "One of the greatest alive. 4/4 with hands while feet play different time signatures." },{ name: "Marten Hagstrom", role: "Rhythm Guitar (1990-present)", contribution: "The riff architect. Writes the majority of Meshuggah's bone-crushing patterns." },{ name: "Dick Lovgren", role: "Bass (2004-present)", contribution: "Locks with Haake's kicks to form the heaviest low-end tandem in metal." }], similar: ["Periphery","Animals as Leaders","Gojira","Car Bomb","Sikth"], influences: { inspired_by: ["Metallica","Allan Holdsworth","King Crimson"], influenced: ["Periphery","Tesseract","Animals as Leaders","Djent (entire genre)"] }, funfacts: ["Haake practiced Bleed for over a year. Drummers have been injured trying to learn it.","Meshuggah is Yiddish for crazy.","Thordendal has synesthesia — sees colors when hearing music.","The members are all reportedly calm and funny offstage. Dad-joke energy vs apocalyptic music."] },
-  "death": { name: "Death", country: "USA", years: "1984-2001", status: "Ended (Chuck d. 2001)", genre: "Death/Progressive Death Metal", overview: "Chuck Schuldiner invented death metal and redefined it with progressive complexity. Always 3 years ahead of everyone.", genreDetail: "Evolved from primitive brutality to technical mastery. Each album was a quantum leap forward.", albums: [{ title: "Scream Bloody Gore", year: 1987, note: "The first true death metal album." },{ title: "Leprosy", year: 1988, note: "Tighter, better production, more sophisticated." },{ title: "Human", year: 1991, note: "Progressive death metal invented." },{ title: "Symbolic", year: 1995, note: "Perfect balance of technique and songwriting." },{ title: "The Sound of Perseverance", year: 1998, note: "Final album. Almost prog-rock in death metal clothing." }], members: [{ name: "Chuck Schuldiner", role: "Vocals, Guitar (1984-2001, d. 2001)", contribution: "Invented death metal, then reinvented it three more times. Each album had a different lineup because his vision evolved faster than anyone could keep up." },{ name: "Paul Masvidal", role: "Guitar (Human)", contribution: "Brought jazz fusion to death metal. Went on to form Cynic." },{ name: "Gene Hoglan", role: "Drums (ITP, Symbolic)", contribution: "The Atomic Clock. Inhuman precision on Symbolic." },{ name: "Steve DiGiorgio", role: "Bass (Human, ITP)", contribution: "Fretless bass wizard. Jazz-influenced lines no death metal band had attempted." },{ name: "Richard Christy", role: "Drums (Sound of Perseverance)", contribution: "Incredible technicality. Later became a comedy writer on Howard Stern." }], similar: ["Cynic","Atheist","Pestilence","Obituary","Control Denied"], influences: { inspired_by: ["Slayer","Possessed","Celtic Frost"], influenced: ["Every death metal band","Cynic","Obscura"] }, funfacts: ["Chuck crowdfunded cancer treatment in 2001. Died December 13 at 34.","Playing in Death was a career launchpad for future legends.","Control Denied was Chuck's vision for prog heavy metal with clean vocals.","Richard Christy became an on-air personality on Howard Stern. Still talks about Death with reverence."] },
-  "opeth": { name: "Opeth", country: "Sweden", years: "1990-present", status: "Active", genre: "Progressive Death/Rock", overview: "Began as prog-death, transformed to pure prog rock. Mikael Akerfeldt is one of metal's most complete musicians.", genreDetail: "Dramatic shifts between growls and acoustics, long compositions, 70s prog inspiration from Camel, King Crimson, Jethro Tull.", albums: [{ title: "Blackwater Park", year: 2001, note: "Prog-death perfection. Steven Wilson produced." },{ title: "Still Life", year: 1999, note: "Concept album masterclass." },{ title: "Ghost Reveries", year: 2005, note: "Last album balancing growl and clean." },{ title: "My Arms, Your Hearse", year: 1998, note: "Dark, cold, atmospheric. The turning point." },{ title: "Pale Communion", year: 2014, note: "Best purely prog album. The shift was genuine." }], members: [{ name: "Mikael Akerfeldt", role: "Vocals, Guitar (1990-present)", contribution: "Both death metal's best growl AND prog's most beautiful clean voice in one person. Writes virtually all material." },{ name: "Fredrik Akesson", role: "Guitar (2007-present)", contribution: "Classically trained shredder with stunning solos." },{ name: "Martin Mendez", role: "Bass (1997-present)", contribution: "Fretless bass adding jazz-like warmth. One of prog-metal's most tasteful bassists." },{ name: "Joakim Svalberg", role: "Keyboards (2011-present)", contribution: "His Hammond and Mellotron give the new era its vintage 70s authenticity." }], similar: ["Katatonia","Porcupine Tree","Edge of Sanity","Ne Obliviscaris","Camel"], influences: { inspired_by: ["Camel","King Crimson","Black Sabbath","Morbid Angel"], influenced: ["Ne Obliviscaris","Haken","Leprous"] }, funfacts: ["Akerfeldt abandoned growling in Opeth but continued in Bloodbath. The irony.","Steven Wilson produced Blackwater Park. Says Opeth is the only death metal band he genuinely loves.","Akerfeldt is an obsessive vinyl collector with thousands of 70s prog records.","When Heritage dropped growling, fans booed. His response: I don't care."] },
-  "darkthrone": { name: "Darkthrone", country: "Norway", years: "1986-present", status: "Active", genre: "Black Metal/Crust", overview: "Cornerstone of Norwegian second-wave black metal. Haven't played live since 1996. Fenriz and Nocturno Culto are metal's most enduring duo.", genreDetail: "Lo-fi production as aesthetic choice. Cold, repetitive, hypnotic. Evolved from BM to crust/punk/black hybrid.", albums: [{ title: "A Blaze in the Northern Sky", year: 1992, note: "The shift from death to black metal. Peaceville was shocked." },{ title: "Under a Funeral Moon", year: 1993, note: "Purer BM vision. Minimalist and ice-cold." },{ title: "Transilvanian Hunger", year: 1994, note: "Four chords, one tempo, total hypnosis." },{ title: "Panzerfaust", year: 1995, note: "More varied. Celtic Frost vibes." },{ title: "The Underground Resistance", year: 2013, note: "Speed/heavy metal tribute. Fenriz's inner nerd." }], members: [{ name: "Fenriz", role: "Drums, Vocals (1986-present)", contribution: "Metal's greatest evangelist. His lyrics, aesthetic choices, and championing of underground bands shaped BM culture as much as the music." },{ name: "Nocturno Culto", role: "Guitar, Bass, Vocals (1988-present)", contribution: "The voice and riff-writer. His thin, trebly guitar tone on Transilvanian Hunger IS Norwegian BM." }], similar: ["Burzum","Mayhem","Immortal","Satyricon","Celtic Frost"], influences: { inspired_by: ["Bathory","Celtic Frost","Black Flag"], influenced: ["Watain","Mgla","Modern black metal"] }, funfacts: ["Fenriz elected to municipal council against his will. Campaign: photo of his cat saying Please don't vote for me. Won anyway.","Haven't played live since 1996. 35+ years, zero touring.","Transilvanian Hunger recorded in Fenriz's bedroom for nearly nothing.","Fenriz runs a one-man blog recommending obscure bands. Metal's most powerful unpaid critic."] },
-  "pantera": { name: "Pantera", country: "USA", years: "1981-2003", status: "Reunited 2022", genre: "Groove/Thrash Metal", overview: "Defined groove metal. Heaviest band in the mainstream. Dimebag Darrell was murdered onstage in 2004.", genreDetail: "Dimebag's buzzsaw tone, Phil's aggression, Vinnie Paul's crushing grooves. Invented the tough metal riff thousands copied.", albums: [{ title: "Cowboys from Hell", year: 1990, note: "Glam to groove. Metal changed forever." },{ title: "Vulgar Display of Power", year: 1992, note: "The title says it all." },{ title: "Far Beyond Driven", year: 1994, note: "#1 on Billboard. Heaviest #1 ever." },{ title: "The Great Southern Trendkill", year: 1996, note: "Darker, rawer. Band falling apart." },{ title: "Reinventing the Steel", year: 2000, note: "Final studio album. Return to roots." }], members: [{ name: "Phil Anselmo", role: "Vocals (1987-03, 2022-present)", contribution: "Most aggressive mainstream vocalist of the 90s. His vocal drop from Cowboys to Vulgar Display is metal's most dramatic evolution." },{ name: "Dimebag Darrell", role: "Guitar (1981-03, d. 2004)", contribution: "Most influential metal guitarist of the 90s. His Randall tone became THE sound. Murdered onstage." },{ name: "Rex Brown", role: "Bass (1982-03, 2022-present)", contribution: "The glue. Punchy, locked-in bass. Not flashy — exactly what Pantera needed." },{ name: "Vinnie Paul", role: "Drums (1981-03, d. 2018)", contribution: "Behind-the-beat pocket that separates Pantera from all imitators. Died of heart disease 2018." }], similar: ["Lamb of God","Machine Head","Sepultura","Down","Exhorder"], influences: { inspired_by: ["Black Sabbath","Kiss","Exhorder","Slayer"], influenced: ["Lamb of God","Trivium","Groove metal"] }, funfacts: ["Exhorder claims Pantera stole groove metal. Both released key albums in 1990. Metal's most under-discussed influence case.","Pre-Cowboys, Pantera was a glam band with spandex and hairspray.","Dimebag buried in a KISS casket from Gene Simmons with an Eddie Van Halen guitar.","Vinnie Paul died without reconciling with Phil. Reunion happened after both brothers passed."] },
-  "bathory": { name: "Bathory", country: "Sweden", years: "1983-2004", status: "Ended (Quorthon d. 2004)", genre: "Black/Viking Metal", overview: "Quorthon single-handedly invented first-wave black metal, viking metal, and atmospheric black metal. One of the most influential individuals in metal history.", genreDetail: "Evolved from raw lo-fi black/thrash to epic viking metal with choirs and Norse themes.", albums: [{ title: "Bathory", year: 1984, note: "Blueprint for all black metal." },{ title: "Under the Sign of the Black Mark", year: 1987, note: "Atmospheric BM before the term existed." },{ title: "Blood Fire Death", year: 1988, note: "Bridge between black and viking metal. A Fine Day to Die is immortal." },{ title: "Hammerheart", year: 1990, note: "Viking metal invented. Choirs, grandeur, Norse history." },{ title: "Twilight of the Gods", year: 1991, note: "Viking trilogy completed. Monumental." }], members: [{ name: "Quorthon", role: "Everything (1983-2004, d. 2004)", contribution: "Was Bathory. Played every instrument, wrote every song, invented multiple genres alone." }], similar: ["Celtic Frost","Enslaved","Moonsorrow","Darkthrone","Falkenbach"], influences: { inspired_by: ["Venom","Motorhead","Black Sabbath"], influenced: ["Mayhem","Darkthrone","Burzum","Enslaved","All of black metal"] }, funfacts: ["Refused to be photographed for years. Debate about whether he was real.","First to use corpse paint, predating the Norwegian scene.","His father Boss ran the label. Nepotism aside — no exec made him invent two genres.","Died of heart failure at 38. No funeral announcement — fans found out weeks later."] },
-  "morbid angel": { name: "Morbid Angel", country: "USA", years: "1984-present", status: "Active", genre: "Death Metal", overview: "Death metal pioneers. Trey Azagthoth's dissonant style defined Florida death metal.", genreDetail: "Brutal, technical, occult. Blastbeats with psychedelic passages. Chaotic yet controlled.", albums: [{ title: "Altars of Madness", year: 1989, note: "Death metal classic that defined the genre." },{ title: "Blessed Are the Sick", year: 1991, note: "Proved death metal could be beautiful." },{ title: "Covenant", year: 1993, note: "Commercial peak. God of Emptiness is iconic." },{ title: "Domination", year: 1995, note: "Groovy, heavy, experimental. Underrated." },{ title: "Formulas Fatal to the Flesh", year: 1998, note: "Back to the roots with Steve Tucker." }], members: [{ name: "Trey Azagthoth", role: "Guitar (1984-present)", contribution: "The architect. Otherworldly style rooted in occult philosophy and Doom video game soundtracks." },{ name: "David Vincent", role: "Bass & Vocals (1986-96, 2004-15)", contribution: "The voice of classic MA. Florida death metal vocal template." },{ name: "Steve Tucker", role: "Bass & Vocals (1997-03, 2015-present)", contribution: "Deeper, more guttural approach. Unfairly overshadowed by the Vincent era." },{ name: "Pete Sandoval", role: "Drums (1988-2013)", contribution: "Blastbeat pioneer. Set the standard for extreme drumming worldwide." }], similar: ["Deicide","Hate Eternal","Immolation","Nile","Necrophagist"], influences: { inspired_by: ["Slayer","Celtic Frost","Possessed"], influenced: ["Hate Eternal","Nile","Behemoth"] }, funfacts: ["Albums follow the alphabet: A, B, C, D... The I album was EDM-influenced and universally hated.","Azagthoth plays Doom backstage before shows as a warm-up ritual.","Sandoval became born-again Christian. The irony.","Band was almost called Ice."] },
-  "gojira": { name: "Gojira", country: "France", years: "1996-present", status: "Active", genre: "Progressive/Groove Death Metal", overview: "Most successful French metal band. Proof heavy intelligent metal can fill arenas. Environmentally conscious without being preachy.", genreDetail: "Massive heaviness with atmospheric passages. Pick scrapes and harmonics are signature sounds. Technical without showing off.", albums: [{ title: "From Mars to Sirius", year: 2005, note: "Flying Whales. Modern metal classic." },{ title: "The Way of All Flesh", year: 2008, note: "Heavier, darker, more death metal." },{ title: "L'Enfant Sauvage", year: 2012, note: "Tighter songwriting, festival-ready." },{ title: "Magma", year: 2016, note: "More accessible. Grammy-nominated." },{ title: "Fortitude", year: 2021, note: "Environmental themes front and center." }], members: [{ name: "Joe Duplantier", role: "Vocals, Guitar (1996-present)", contribution: "Writes all material. Death growls to haunting cleans. Pick-scrape trademark. Also produces." },{ name: "Mario Duplantier", role: "Drums (1996-present)", contribution: "Best metal drummer of his generation. Also visual artist behind Gojira artwork." },{ name: "Christian Andreu", role: "Guitar (1996-present)", contribution: "The structural foundation. His rhythm guitar creates Gojira's wall-of-sound." },{ name: "Jean-Michel Labadie", role: "Bass (2001-present)", contribution: "Tight, aggressive low end. Part of what makes Gojira physically heavy." }], similar: ["Meshuggah","Mastodon","Strapping Young Lad","Cult of Luna","Decapitated"], influences: { inspired_by: ["Meshuggah","Morbid Angel","Neurosis"], influenced: ["Alien Weaponry","Jinjer","Modern prog-death"] }, funfacts: ["Performed at 2024 Paris Olympics opening ceremony. First metal band at an Olympics.","Originally called Godzilla, changed for legal reasons.","Joe practices meditation and yoga daily.","Mario built Silver Cord Studio in New York. Much of Gojira's artwork is his."] },
-  "bolt thrower": { name: "Bolt Thrower", country: "England", years: "1986-2015", status: "Disbanded", genre: "Death Metal", overview: "The ultimate war machine. Warhammer 40K aesthetics, massive grooves, total integrity.", genreDetail: "Heavy, repetitive, groovy. Endlessly heavy riffs rolling like tanks. Not technical — just crushing.", albums: [{ title: "Realm of Chaos", year: 1989, note: "Official Warhammer 40K artwork." },{ title: "War Master", year: 1991, note: "Groove-death perfected." },{ title: "The IVth Crusade", year: 1992, note: "Historical war themes. Massively heavy." },{ title: "...For Victory", year: 1994, note: "Most accessible. Every riff hits." },{ title: "Those Once Loyal", year: 2005, note: "Final album. Went out on top." }], members: [{ name: "Karl Willetts", role: "Vocals (1986-94, 97-15)", contribution: "Deep commanding growl narrating battlefield imagery with gravitas." },{ name: "Gavin Ward", role: "Guitar (1986-2015)", contribution: "Simple, effective, devastating riffs. Proof you don't need sweep picking." },{ name: "Jo Bench", role: "Bass (1988-2015)", contribution: "One of death metal's first prominent women. Massive bass tone. A genuine pioneer." },{ name: "Martin Kearns", role: "Drums (1994-2015, d. 2015)", contribution: "Rock-solid mid-tempo grooves. Not flashy — precise. His death ended the band." }], similar: ["Hail of Bullets","Asphyx","Memoriam","Benediction","Dismember"], influences: { inspired_by: ["Discharge","Celtic Frost","Slayer"], influenced: ["Memoriam","Hail of Bullets","War metal"] }, funfacts: ["Recorded an album ~2014, never released — quality not good enough. When Kearns died, they disbanded forever. Integrity.","Games Workshop gave official Warhammer 40K artwork permission. Members were genuine tabletop gamers.","Kept merch cheap. Metal for working-class fans.","Jo Bench earned respect by being undeniably good. Never made gender a talking point."] },
-  "kreator": { name: "Kreator", country: "Germany", years: "1982-present", status: "Active", genre: "Thrash Metal", overview: "Leader of Teutonic thrash. Mille Petrozza kept them relevant for 40+ years.", genreDetail: "Tighter than Slayer, rawer than Metallica. German precision meets punk energy. Later albums add melodic death elements.", albums: [{ title: "Pleasure to Kill", year: 1986, note: "Peak German thrash." },{ title: "Coma of Souls", year: 1990, note: "Most refined." },{ title: "Violent Revolution", year: 2001, note: "The comeback that proved relevance." },{ title: "Phantom Antichrist", year: 2012, note: "Modern thrash at the highest level." },{ title: "Hate Uber Alles", year: 2022, note: "40 years in, still sharp." }], members: [{ name: "Mille Petrozza", role: "Vocals, Guitar (1982-present)", contribution: "Snarling vocals and precise riffing for four decades. Rare ability to adapt without compromising." },{ name: "Sami Yli-Sirnio", role: "Guitar (2001-present)", contribution: "Finnish guitarist who gave Kreator a new melodic dimension." },{ name: "Frederic Leclercq", role: "Bass (2019-present)", contribution: "Former Dragonforce guitarist turned bassist. Unexpected but perfect fit." },{ name: "Ventor", role: "Drums (1982-96, 2001-present)", contribution: "Among the most ferocious drumming in thrash history." }], similar: ["Sodom","Destruction","Exodus","Sepultura","Warbringer"], influences: { inspired_by: ["Venom","Discharge","Slayer"], influenced: ["Arch Enemy","Modern thrash revival"] }, funfacts: ["Petrozza is vegan 20+ years. Runs restaurant Flickenschild in Essen. Says killing animals is more brutal than anything he sings about.","Mid-90s experimental phase nearly killed the band. Violent Revolution was one of thrash's greatest comebacks.","Bigger in South America than Germany. Sao Paulo outdraw Essen 10x.","Petrozza and Tom Angelripper (Sodom) are childhood friends from the Ruhr Valley."] },
-  "emperor": { name: "Emperor", country: "Norway", years: "1991-2001", status: "Sporadic reunions", genre: "Symphonic Black Metal", overview: "Took black metal from lo-fi minimalism to symphonic grandeur. Ihsahn is one of metal's most ambitious musicians.", genreDetail: "Orchestral keyboards, complex compositions, black metal intensity. Defined the symphonic direction.", albums: [{ title: "In the Nightside Eclipse", year: 1994, note: "Symphonic black metal invented. Majestic and evil." },{ title: "Anthems to the Welkin at Dusk", year: 1997, note: "Tighter, more technical. Perfect." },{ title: "IX Equilibrium", year: 1999, note: "More extreme, more progressive." },{ title: "Prometheus", year: 2001, note: "Avant-garde. Final studio album." }], members: [{ name: "Ihsahn", role: "Vocals, Guitar, Keys (1991-01)", contribution: "Emperor's visionary. Multi-instrumentalist. Solo career blends BM with saxophone and prog." },{ name: "Samoth", role: "Guitar (1991-01)", contribution: "Riff engine. Tremolo-picking on Nightside Eclipse is foundational. Ran Nocturnal Art Productions." },{ name: "Faust", role: "Drums (1991-93)", contribution: "Drummed on early recordings. Convicted of murder in 1994." },{ name: "Trym", role: "Drums (1995-01)", contribution: "Replaced Faust with blinding speed. Blastbeats on Anthems are punishingly precise." }], similar: ["Ihsahn","Satyricon","Dimmu Borgir","Limbonic Art","Arcturus"], influences: { inspired_by: ["Bathory","Mayhem","Tchaikovsky"], influenced: ["Dimmu Borgir","Cradle of Filth","Symphonic BM"] }, funfacts: ["Ihsahn lives suburban life in Notodden. Vintage synths, Hi-Fi obsession. The occult BM icon is a music nerd.","History includes murder (Faust), church burnings (Samoth served time for arson).","Samoth used prison time to plan Nocturnal Art Productions.","Ihsahn introduced saxophone to BM. Purists lost their minds. It was incredible."] },
+  "slayer": { name: "Slayer", country: "USA", years: "1981-2019", status: "Disbanded", genre: "Thrash Metal", overview: "One of thrash metal's Big Four. Defined extreme thrash with raw aggression and occult themes.", genreDetail: "Blistering speed, chaotic solos, screaming vocals, war-inspired lyrics. The heaviest of the Big Four.", scene: "Los Angeles thrash scene alongside Metallica, Megadeth, and Suicidal Tendencies. While the Bay Area had Exodus and Testament, LA bred the darker, more extreme side of thrash.", albums: [{ title: "Reign in Blood", year: 1986, note: "29 minutes of pure aggression.", producer: "Rick Rubin", studio: "Def Jam Studios", tuning: "E Standard" },{ title: "South of Heaven", year: 1988, note: "Slower, darker, atmospheric.", producer: "Rick Rubin", studio: "Def Jam Studios", tuning: "Eb Standard" },{ title: "Seasons in the Abyss", year: 1990, note: "Perfect balance.", producer: "Rick Rubin & Andy Wallace", studio: "Def American Studios", tuning: "Eb Standard" }], members: [{ name: "Tom Araya", role: "Bass & Vocals (1981-2019)", contribution: "Iconic scream. Most underrated bassist in thrash.", gear: "BC Rich Mockingbird Bass, various Ampeg and Hartke amp setups" },{ name: "Kerry King", role: "Guitar (1981-2019)", contribution: "Chaotic solos. Wrote majority of later material.", gear: "BC Rich guitars (KKV, Mockingbird), Marshall JCM800, Kahler tremolo systems" },{ name: "Jeff Hanneman", role: "Guitar (1981-2013, d. 2013)", contribution: "Wrote Angel of Death, Raining Blood, South of Heaven.", gear: "ESP Hanneman signature, Marshall JCM800, later Mesa Boogie" },{ name: "Dave Lombardo", role: "Drums (1981-92, 2001-13)", contribution: "Invented thrash drumming. Godfather of double bass.", gear: "Tama drums, Paiste cymbals, Pearl double bass pedals" }], similar: ["Kreator","Exodus","Sodom","Dark Angel","Demolition Hammer"], influences: { inspired_by: ["Venom","Iron Maiden","Judas Priest","Black Flag"], influenced: ["Cannibal Corpse","Lamb of God","Machine Head","Trivium"] }, startHere: { newcomer: "Reign in Blood — 29 minutes, zero filler, the definitive thrash album", deep: "Hell Awaits — proto-death metal complexity that rewards repeat listens" }, deepCuts: [{ track: "Necrophiliac", album: "Hell Awaits", why: "Overlooked mid-tempo crusher with some of Hanneman's best riffing" },{ track: "Mandatory Suicide", album: "South of Heaven", why: "Haunting atmosphere that shows Slayer's range beyond pure speed" },{ track: "Expendable Youth", album: "Seasons in the Abyss", why: "Social commentary disguised as thrash brutality" }], moodPicks: { aggressive: "Reign in Blood — pure unrelenting violence", atmospheric: "South of Heaven — slow burn dread", technical: "Hell Awaits — complex arrangements", melancholic: "Seasons in the Abyss — title track's brooding intro" }, timeline: [{ year: 1981, event: "Formed in Huntington Park, California" },{ year: 1983, event: "Debut Show No Mercy released on Metal Blade" },{ year: 1986, event: "Reign in Blood released — thrash metal redefined" },{ year: 1990, event: "Seasons in the Abyss brings mainstream attention" },{ year: 2006, event: "Christ Illusion marks a return to form" },{ year: 2013, event: "Jeff Hanneman dies of liver failure" },{ year: 2019, event: "Final show at The Forum, LA" }], controversies: ["Angel of Death lyrics about Mengele led to accusations of Nazi sympathism — unfounded but persistent.","Dave Lombardo fired multiple times over royalty disputes."], historicalContext: "Emerged alongside Metallica and Megadeth in the early 80s LA scene but chose extremity over accessibility. While Metallica went mainstream, Slayer stayed brutal.", funfacts: ["Hanneman wrote Angel of Death from historical research. Araya is Chilean Catholic, King is half Latino.","Rick Rubin produced Reign in Blood but Columbia refused to distribute it.","Lombardo fired mid-tour via fax machine.","Araya is a devout Catholic who goes to church Sundays."] },
 };
 
-function fuzzyMatch(q, t) {
-  q = q.toLowerCase(); t = t.toLowerCase();
-  if (t.includes(q)) return 1;
-  if (t.startsWith(q)) return 0.9;
-  let qi = 0, s = 0;
-  for (let i = 0; i < t.length && qi < q.length; i++) { if (t[i] === q[qi]) { s++; qi++; } }
-  return qi === q.length ? s / q.length * 0.7 : 0;
-}
-function getSuggestions(query, names) {
-  if (!query || query.length < 2) return [];
-  return names.map(n => ({ n, s: fuzzyMatch(query, n) })).filter(x => x.s > 0.3).sort((a,b) => b.s - a.s).slice(0,5).map(x => x.n);
-}
+function fuzzyMatch(q, t) { q=q.toLowerCase();t=t.toLowerCase(); if(t.includes(q))return 1;if(t.startsWith(q))return 0.9;let qi=0,s=0;for(let i=0;i<t.length&&qi<q.length;i++){if(t[i]===q[qi]){s++;qi++}}return qi===q.length?s/q.length*0.7:0; }
+function getSuggestions(query, names) { if(!query||query.length<2)return[];return names.map(n=>({n,s:fuzzyMatch(query,n)})).filter(x=>x.s>0.3).sort((a,b)=>b.s-a.s).slice(0,5).map(x=>x.n); }
 
 async function searchBandBackend(bandName) {
-  const r = await fetch('/api/search', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ band: bandName }),
-  });
-  if (!r.ok) {
-    const err = await r.json().catch(() => ({}));
-    throw new Error(err.error || `Server error ${r.status}`);
-  }
+  const r = await fetch('/api/search', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({band:bandName}) });
+  if(!r.ok){ const err=await r.json().catch(()=>({})); throw new Error(err.error||`Server error ${r.status}`); }
   return r.json();
 }
 
 function SectionCard({ title, children, icon, delay, accent }) {
-  return (
-    <div style={{ background:"linear-gradient(135deg,rgba(20,20,20,0.95),rgba(30,30,30,0.9))", border:"1px solid #333", borderLeft:`3px solid ${accent}`, borderRadius:"4px", padding:"16px 20px", marginBottom:"12px", animation:`slideUp 0.4s ease ${delay}s both` }}>
-      <div style={{ fontSize:"11px", letterSpacing:"3px", textTransform:"uppercase", color:accent, marginBottom:"10px", fontFamily:"'Oswald',sans-serif", fontWeight:600 }}>{icon} {title}</div>
-      <div style={{ color:"#ccc", fontSize:"14px", lineHeight:"1.7", fontFamily:"'Source Sans 3',sans-serif" }}>{children}</div>
-    </div>
-  );
+  return (<div style={{ background:"linear-gradient(135deg,rgba(20,20,20,0.95),rgba(30,30,30,0.9))", border:"1px solid #333", borderLeft:`3px solid ${accent}`, borderRadius:"4px", padding:"16px 20px", marginBottom:"12px", animation:`slideUp 0.4s ease ${delay}s both` }}>
+    <div style={{ fontSize:"11px", letterSpacing:"3px", textTransform:"uppercase", color:accent, marginBottom:"10px", fontFamily:"'Oswald',sans-serif", fontWeight:600 }}>{icon} {title}</div>
+    <div style={{ color:"#ccc", fontSize:"14px", lineHeight:"1.7", fontFamily:"'Source Sans 3',sans-serif" }}>{children}</div>
+  </div>);
 }
 
 function GenreNode({ node, depth, accent, expanded, toggleExpand }) {
-  const has = node.children?.length > 0;
-  const open = expanded[node.id];
-  return (
-    <div style={{ marginLeft: depth * 20 }}>
-      <div onClick={() => has && toggleExpand(node.id)} style={{ display:"flex", alignItems:"center", gap:"8px", padding:"8px 12px", marginBottom:"4px", borderRadius:"4px", background:depth===0?"rgba(255,255,255,0.05)":"transparent", border:`1px solid ${depth===0?"#333":"transparent"}`, cursor:has?"pointer":"default" }}>
-        {has ? <span style={{ color:accent, fontSize:"12px", display:"inline-block", transform:open?"rotate(90deg)":"rotate(0deg)", transition:"transform 0.2s" }}>▶</span> : <span style={{ color:"#333", fontSize:"12px" }}>•</span>}
-        <div>
-          <span style={{ color:"#fff", fontFamily:"'Oswald',sans-serif", fontSize:"14px", letterSpacing:"1px" }}>{node.label}</span>
-          <span style={{ color:"#555", fontSize:"11px", marginLeft:"8px" }}>{node.year}</span>
-          <div style={{ color:"#666", fontSize:"12px", marginTop:"2px" }}>{node.bands}</div>
-        </div>
-      </div>
-      {open && has && node.children.map(c => <GenreNode key={c.id} node={c} depth={depth+1} accent={accent} expanded={expanded} toggleExpand={toggleExpand} />)}
+  const has=node.children?.length>0; const open=expanded[node.id];
+  return (<div style={{marginLeft:depth*20}}>
+    <div onClick={()=>has&&toggleExpand(node.id)} style={{display:"flex",alignItems:"center",gap:"8px",padding:"8px 12px",marginBottom:"4px",borderRadius:"4px",background:depth===0?"rgba(255,255,255,0.05)":"transparent",border:`1px solid ${depth===0?"#333":"transparent"}`,cursor:has?"pointer":"default"}}>
+      {has?<span style={{color:accent,fontSize:"12px",display:"inline-block",transform:open?"rotate(90deg)":"rotate(0deg)",transition:"transform 0.2s"}}>▶</span>:<span style={{color:"#333",fontSize:"12px"}}>•</span>}
+      <div><span style={{color:"#fff",fontFamily:"'Oswald',sans-serif",fontSize:"14px",letterSpacing:"1px"}}>{node.label}</span><span style={{color:"#555",fontSize:"11px",marginLeft:"8px"}}>{node.year}</span><div style={{color:"#666",fontSize:"12px",marginTop:"2px"}}>{node.bands}</div></div>
     </div>
-  );
+    {open&&has&&node.children.map(c=><GenreNode key={c.id} node={c} depth={depth+1} accent={accent} expanded={expanded} toggleExpand={toggleExpand}/>)}
+  </div>);
 }
 
-function VersusMode({ bandCache, accent }) {
-  const [left, setLeft] = useState(""); const [right, setRight] = useState("");
-  const names = Object.values(bandCache).map(b => b.name);
-  const bL = bandCache[left.toLowerCase()], bR = bandCache[right.toLowerCase()];
-  const ss = { flex:1, minWidth:"140px", background:"#151515", border:"1px solid #333", borderRadius:"4px", padding:"10px 14px", color:"#eee", fontSize:"14px", fontFamily:"'Source Sans 3',sans-serif", outline:"none", cursor:"pointer", appearance:"none" };
-  return (
-    <div>
-      <div style={{ color:"#555", fontSize:"13px", marginBottom:"16px" }}>Pick two bands to compare. Search for bands first to add them here.</div>
-      <div style={{ display:"flex", gap:"12px", marginBottom:"20px", flexWrap:"wrap", alignItems:"center" }}>
-        <select value={left} onChange={e=>setLeft(e.target.value)} style={ss}><option value="">Band 1...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select>
-        <div style={{ color:accent, fontFamily:"'Metal Mania',system-ui", fontSize:"24px" }}>VS</div>
-        <select value={right} onChange={e=>setRight(e.target.value)} style={ss}><option value="">Band 2...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select>
-      </div>
-      {bL && bR && <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"12px" }}>
-        {[bL,bR].map((b,i)=>(<div key={i} style={{ background:"#111", border:"1px solid #282828", borderRadius:"4px", padding:"16px", animation:`slideUp 0.3s ease ${i*0.1}s both` }}>
-          <div style={{ fontFamily:"'Oswald',sans-serif", fontSize:"20px", color:"#fff", textTransform:"uppercase", letterSpacing:"2px", marginBottom:"12px", borderBottom:`2px solid ${accent}`, paddingBottom:"8px" }}>{b.name}</div>
-          {[["Country",b.country],["Years",b.years],["Status",b.status],["Genre",b.genre],["Albums",String(b.albums?.length||0)],["Members",String(b.members?.length||0)]].map(([l,v])=><div key={l} style={{ display:"flex", justifyContent:"space-between", marginBottom:"6px", fontSize:"13px" }}><span style={{ color:"#666" }}>{l}</span><span style={{ color:"#ccc" }}>{v}</span></div>)}
-          <div style={{ marginTop:"12px" }}><div style={{ color:"#555", fontSize:"10px", letterSpacing:"2px", textTransform:"uppercase", fontFamily:"'Oswald',sans-serif", marginBottom:"6px" }}>Key Albums</div>
-          {(b.albums||[]).slice(0,3).map((a,j)=><div key={j} style={{ color:"#999", fontSize:"12px", marginBottom:"2px" }}><span style={{ color:"#fff" }}>{a.title}</span> <span style={{ color:"#555" }}>({a.year})</span></div>)}</div>
-        </div>))}
-      </div>}
-    </div>
-  );
-}
+function VersusMode({bandCache,accent}){const[left,setLeft]=useState("");const[right,setRight]=useState("");const names=Object.values(bandCache).map(b=>b.name);const bL=bandCache[left.toLowerCase()],bR=bandCache[right.toLowerCase()];const ss={flex:1,minWidth:"140px",background:"#151515",border:"1px solid #333",borderRadius:"4px",padding:"10px 14px",color:"#eee",fontSize:"14px",fontFamily:"'Source Sans 3',sans-serif",outline:"none",cursor:"pointer",appearance:"none"};return(<div><div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>Pick two bands to compare side by side.</div><div style={{display:"flex",gap:"12px",marginBottom:"20px",flexWrap:"wrap",alignItems:"center"}}><select value={left} onChange={e=>setLeft(e.target.value)} style={ss}><option value="">Band 1...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select><div style={{color:accent,fontFamily:"'Metal Mania',system-ui",fontSize:"24px"}}>VS</div><select value={right} onChange={e=>setRight(e.target.value)} style={ss}><option value="">Band 2...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select></div>{bL&&bR&&<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"12px"}}>{[bL,bR].map((b,i)=>(<div key={i} style={{background:"#111",border:"1px solid #282828",borderRadius:"4px",padding:"16px",animation:`slideUp 0.3s ease ${i*0.1}s both`}}><div style={{fontFamily:"'Oswald',sans-serif",fontSize:"20px",color:"#fff",textTransform:"uppercase",letterSpacing:"2px",marginBottom:"12px",borderBottom:`2px solid ${accent}`,paddingBottom:"8px"}}>{b.name}</div>{[["Country",b.country],["Years",b.years],["Status",b.status],["Genre",b.genre],["Albums",String(b.albums?.length||0)],["Members",String(b.members?.length||0)]].map(([l,v])=><div key={l} style={{display:"flex",justifyContent:"space-between",marginBottom:"6px",fontSize:"13px"}}><span style={{color:"#666"}}>{l}</span><span style={{color:"#ccc"}}>{v}</span></div>)}<div style={{marginTop:"12px"}}><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif",marginBottom:"6px"}}>Key Albums</div>{(b.albums||[]).slice(0,3).map((a,j)=><div key={j} style={{color:"#999",fontSize:"12px",marginBottom:"2px"}}><span style={{color:"#fff"}}>{a.title}</span> <span style={{color:"#555"}}>({a.year})</span></div>)}</div></div>))}</div>}</div>);}
 
-function InfluenceMap({ bandCache, accent }) {
-  const [sel, setSel] = useState("");
-  const names = Object.values(bandCache).map(b => b.name);
-  const band = bandCache[sel.toLowerCase()];
-  const ss = { flex:1, minWidth:"140px", background:"#151515", border:"1px solid #333", borderRadius:"4px", padding:"10px 14px", color:"#eee", fontSize:"14px", fontFamily:"'Source Sans 3',sans-serif", outline:"none", cursor:"pointer", appearance:"none" };
-  return (
-    <div>
-      <div style={{ color:"#555", fontSize:"13px", marginBottom:"16px" }}>Select a band to see who inspired them and who they influenced.</div>
-      <select value={sel} onChange={e=>setSel(e.target.value)} style={ss}><option value="">Select...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select>
-      {band?.influences && <div style={{ marginTop:"20px", animation:"slideUp 0.3s ease" }}>
-        <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"4px" }}>
-          <div style={{ color:"#555", fontSize:"10px", letterSpacing:"2px", textTransform:"uppercase", fontFamily:"'Oswald',sans-serif" }}>Inspired by</div>
-          <div style={{ display:"flex", flexWrap:"wrap", gap:"6px", justifyContent:"center", marginBottom:"12px" }}>{(band.influences.inspired_by||[]).map((b,i)=><span key={i} style={{ background:"#1a1a1a", border:"1px solid #333", borderRadius:"3px", padding:"4px 12px", fontSize:"12px", color:"#999", fontFamily:"'Oswald',sans-serif" }}>{b}</span>)}</div>
-          <div style={{ fontSize:"18px", color:"#555" }}>↓</div>
-          <div style={{ background:accent, color:"#fff", padding:"10px 24px", borderRadius:"4px", fontFamily:"'Oswald',sans-serif", fontSize:"18px", fontWeight:700, letterSpacing:"2px", textTransform:"uppercase", boxShadow:`0 0 30px ${accent}44` }}>{band.name}</div>
-          <div style={{ fontSize:"18px", color:"#555" }}>↓</div>
-          <div style={{ color:"#555", fontSize:"10px", letterSpacing:"2px", textTransform:"uppercase", fontFamily:"'Oswald',sans-serif", marginTop:"4px" }}>Influenced</div>
-          <div style={{ display:"flex", flexWrap:"wrap", gap:"6px", justifyContent:"center" }}>{(band.influences.influenced||[]).map((b,i)=><span key={i} style={{ background:"#1a1a1a", border:"1px solid #333", borderRadius:"3px", padding:"4px 12px", fontSize:"12px", color:"#999", fontFamily:"'Oswald',sans-serif" }}>{b}</span>)}</div>
-        </div>
-      </div>}
-    </div>
-  );
-}
+function InfluenceMap({bandCache,accent}){const[sel,setSel]=useState("");const names=Object.values(bandCache).map(b=>b.name);const band=bandCache[sel.toLowerCase()];const ss={flex:1,minWidth:"140px",background:"#151515",border:"1px solid #333",borderRadius:"4px",padding:"10px 14px",color:"#eee",fontSize:"14px",fontFamily:"'Source Sans 3',sans-serif",outline:"none",cursor:"pointer",appearance:"none"};return(<div><div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>Select a band to see who inspired them and who they influenced.</div><select value={sel} onChange={e=>setSel(e.target.value)} style={ss}><option value="">Select...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select>{band?.influences&&<div style={{marginTop:"20px",animation:"slideUp 0.3s ease"}}><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"4px"}}><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif"}}>Inspired by</div><div style={{display:"flex",flexWrap:"wrap",gap:"6px",justifyContent:"center",marginBottom:"12px"}}>{(band.influences.inspired_by||[]).map((b,i)=><span key={i} style={{background:"#1a1a1a",border:"1px solid #333",borderRadius:"3px",padding:"4px 12px",fontSize:"12px",color:"#999",fontFamily:"'Oswald',sans-serif"}}>{b}</span>)}</div><div style={{fontSize:"18px",color:"#555"}}>↓</div><div style={{background:accent,color:"#fff",padding:"10px 24px",borderRadius:"4px",fontFamily:"'Oswald',sans-serif",fontSize:"18px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",boxShadow:`0 0 30px ${accent}44`}}>{band.name}</div><div style={{fontSize:"18px",color:"#555"}}>↓</div><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif",marginTop:"4px"}}>Influenced</div><div style={{display:"flex",flexWrap:"wrap",gap:"6px",justifyContent:"center"}}>{(band.influences.influenced||[]).map((b,i)=><span key={i} style={{background:"#1a1a1a",border:"1px solid #333",borderRadius:"3px",padding:"4px 12px",fontSize:"12px",color:"#999",fontFamily:"'Oswald',sans-serif"}}>{b}</span>)}</div></div></div>}</div>);}
 
-const TABS = [{ id:"search", label:"Search" },{ id:"genres", label:"Genre Tree" },{ id:"versus", label:"Versus" },{ id:"influence", label:"Influences" }];
+const TABS=[{id:"search",label:"Search"},{id:"genres",label:"Genre Tree"},{id:"versus",label:"Versus"},{id:"influence",label:"Influences"}];
 
-function App() {
-  const [theme, setTheme] = useState("blood");
-  const [tab, setTab] = useState("search");
-  const [query, setQuery] = useState("");
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [notFound, setNotFound] = useState(false);
-  const [suggestions, setSuggestions] = useState([]);
-  const [showSug, setShowSug] = useState(false);
-  const [genreExp, setGenreExp] = useState({ "heavy-metal": true });
-  const [bandCache, setBandCache] = useState({ ...LOCAL_BANDS });
-  const inputRef = useRef(null);
-  const t = THEMES[theme];
-  const allNames = Object.values(bandCache).map(b => b.name);
+function App(){
+  const[theme,setTheme]=useState("blood");
+  const[tab,setTab]=useState("search");
+  const[query,setQuery]=useState("");
+  const[result,setResult]=useState(null);
+  const[loading,setLoading]=useState(false);
+  const[error,setError]=useState("");
+  const[notFound,setNotFound]=useState(false);
+  const[suggestions,setSuggestions]=useState([]);
+  const[showSug,setShowSug]=useState(false);
+  const[genreExp,setGenreExp]=useState({"heavy-metal":true});
+  const[bandCache,setBandCache]=useState({...LOCAL_BANDS});
+  const inputRef=useRef(null);
+  const t=THEMES[theme];
+  const allNames=Object.values(bandCache).map(b=>b.name);
 
-  const search = async (bn) => {
-    const q = (bn||query).trim(); if(!q) return;
-    setQuery(q); setShowSug(false); setError(""); setNotFound(false);
-    const key = q.toLowerCase();
-    if (bandCache[key]) { setResult(bandCache[key]); return; }
-    setLoading(true); setResult(null);
-    try {
-      const data = await searchBandBackend(q);
-      if (data.error === "not_found") { setNotFound(true); }
-      else { setBandCache(prev => ({...prev, [key]: data})); setResult(data); }
-    } catch (e) { setError(e.message || "Search failed. Please try again."); }
-    setLoading(false);
-  };
+  const search=async(bn)=>{const q=(bn||query).trim();if(!q)return;setQuery(q);setShowSug(false);setError("");setNotFound(false);const key=q.toLowerCase();if(bandCache[key]){setResult(bandCache[key]);return;}setLoading(true);setResult(null);try{const data=await searchBandBackend(q);if(data.error==="not_found"){setNotFound(true);}else{setBandCache(prev=>({...prev,[key]:data}));setResult(data);}}catch(e){setError(e.message||"Search failed.");}setLoading(false);};
+  const handleInput=(v)=>{setQuery(v);if(v.length>=2){setSuggestions(getSuggestions(v,allNames));setShowSug(true);}else setShowSug(false);};
 
-  const handleInput = (v) => { setQuery(v); if(v.length>=2) { setSuggestions(getSuggestions(v,allNames)); setShowSug(true); } else setShowSug(false); };
-
-  return (
-    <div style={{ minHeight:"100vh", background:"#0a0a0a", color:"#eee", fontFamily:"'Source Sans 3',sans-serif" }}>
+  return(
+    <div style={{minHeight:"100vh",background:"#0a0a0a",color:"#eee",fontFamily:"'Source Sans 3',sans-serif"}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&family=Metal+Mania&display=swap');
         @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -212,66 +117,126 @@ function App() {
         body{margin:0;background:#0a0a0a}select{appearance:none}select option{background:#151515;color:#eee}
       `}</style>
 
-      <div style={{ position:"fixed", inset:0, zIndex:0, opacity:0.03, pointerEvents:"none", backgroundImage:`url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+      <div style={{position:"fixed",inset:0,zIndex:0,opacity:0.03,pointerEvents:"none",backgroundImage:`url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}}/>
 
-      <div style={{ position:"relative", zIndex:1, maxWidth:"780px", margin:"0 auto", padding:"32px 20px" }}>
-        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:"32px", flexWrap:"wrap", gap:"12px" }}>
+      <div style={{position:"relative",zIndex:1,maxWidth:"780px",margin:"0 auto",padding:"32px 20px"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"32px",flexWrap:"wrap",gap:"12px"}}>
           <div>
-            <div style={{ fontFamily:"'Metal Mania',system-ui", fontSize:"clamp(28px,7vw,48px)", color:t.accent, letterSpacing:"2px", lineHeight:1.1, textShadow:`0 0 40px ${t.accentGlow},0 2px 0 #000` }}>METAL ENCYCLOPEDIA</div>
-            <div style={{ fontFamily:"'Oswald',sans-serif", fontSize:"10px", letterSpacing:"5px", textTransform:"uppercase", color:"#555", marginTop:"4px" }}>AI-Powered • Every Subgenre • No Posers</div>
+            <div style={{fontFamily:"'Metal Mania',system-ui",fontSize:"clamp(28px,7vw,48px)",color:t.accent,letterSpacing:"2px",lineHeight:1.1,textShadow:`0 0 40px ${t.accentGlow},0 2px 0 #000`}}>METAL ENCYCLOPEDIA</div>
+            <div style={{fontFamily:"'Oswald',sans-serif",fontSize:"10px",letterSpacing:"5px",textTransform:"uppercase",color:"#555",marginTop:"4px"}}>AI-Powered • Every Subgenre • No Posers</div>
           </div>
-          <button onClick={()=>setTheme(theme==="blood"?"frost":"blood")} style={{ background:"#151515", border:`1px solid ${t.accent}`, borderRadius:"4px", padding:"6px 14px", color:t.accent, fontSize:"11px", cursor:"pointer", fontFamily:"'Oswald',sans-serif", letterSpacing:"2px", textTransform:"uppercase" }}>{THEMES[theme==="blood"?"frost":"blood"].name}</button>
+          <button onClick={()=>setTheme(theme==="blood"?"frost":"blood")} style={{background:"#151515",border:`1px solid ${t.accent}`,borderRadius:"4px",padding:"6px 14px",color:t.accent,fontSize:"11px",cursor:"pointer",fontFamily:"'Oswald',sans-serif",letterSpacing:"2px",textTransform:"uppercase"}}>{THEMES[theme==="blood"?"frost":"blood"].name}</button>
         </div>
 
-        <div style={{ display:"flex", gap:"4px", marginBottom:"24px", borderBottom:"1px solid #222", paddingBottom:"12px", overflowX:"auto" }}>
-          {TABS.map(tb=><div key={tb.id} className="tt" onClick={()=>setTab(tb.id)} style={{ padding:"8px 16px", borderRadius:"4px 4px 0 0", fontFamily:"'Oswald',sans-serif", fontSize:"13px", letterSpacing:"2px", textTransform:"uppercase", color:tab===tb.id?"#fff":"#555", whiteSpace:"nowrap", background:tab===tb.id?`${t.accent}22`:"transparent", borderBottom:tab===tb.id?`2px solid ${t.accent}`:"2px solid transparent" }}>{tb.label}</div>)}
+        <div style={{display:"flex",gap:"4px",marginBottom:"24px",borderBottom:"1px solid #222",paddingBottom:"12px",overflowX:"auto"}}>
+          {TABS.map(tb=><div key={tb.id} className="tt" onClick={()=>setTab(tb.id)} style={{padding:"8px 16px",borderRadius:"4px 4px 0 0",fontFamily:"'Oswald',sans-serif",fontSize:"13px",letterSpacing:"2px",textTransform:"uppercase",color:tab===tb.id?"#fff":"#555",whiteSpace:"nowrap",background:tab===tb.id?`${t.accent}22`:"transparent",borderBottom:tab===tb.id?`2px solid ${t.accent}`:"2px solid transparent"}}>{tb.label}</div>)}
         </div>
 
-        {tab==="search" && <div>
-          <div style={{ position:"relative", marginBottom:"16px" }}>
-            <div style={{ display:"flex", gap:"8px" }}>
-              <input ref={inputRef} className="si" value={query} onChange={e=>handleInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")search()}} onFocus={()=>query.length>=2&&setShowSug(true)} onBlur={()=>setTimeout(()=>setShowSug(false),200)} placeholder="Search any band..." style={{ flex:1, background:"#151515", border:"1px solid #333", borderRadius:"4px", padding:"14px 18px", color:"#eee", fontSize:"16px", fontFamily:"'Source Sans 3',sans-serif" }} />
-              <button onClick={()=>search()} disabled={loading} style={{ background:t.accent, color:"#fff", border:"none", borderRadius:"4px", padding:"14px 24px", fontFamily:"'Oswald',sans-serif", fontSize:"14px", letterSpacing:"2px", textTransform:"uppercase", cursor:loading?"wait":"pointer", fontWeight:600 }}>{loading?"...":"SEARCH"}</button>
+        {tab==="search"&&<div>
+          <div style={{position:"relative",marginBottom:"16px"}}>
+            <div style={{display:"flex",gap:"8px"}}>
+              <input ref={inputRef} className="si" value={query} onChange={e=>handleInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")search()}} onFocus={()=>query.length>=2&&setShowSug(true)} onBlur={()=>setTimeout(()=>setShowSug(false),200)} placeholder="Search any band..." style={{flex:1,background:"#151515",border:"1px solid #333",borderRadius:"4px",padding:"14px 18px",color:"#eee",fontSize:"16px",fontFamily:"'Source Sans 3',sans-serif"}}/>
+              <button onClick={()=>search()} disabled={loading} style={{background:t.accent,color:"#fff",border:"none",borderRadius:"4px",padding:"14px 24px",fontFamily:"'Oswald',sans-serif",fontSize:"14px",letterSpacing:"2px",textTransform:"uppercase",cursor:loading?"wait":"pointer",fontWeight:600}}>{loading?"...":"SEARCH"}</button>
             </div>
-            {showSug && suggestions.length>0 && <div style={{ position:"absolute", top:"100%", left:0, right:"90px", zIndex:10, background:"#151515", border:"1px solid #333", borderRadius:"0 0 4px 4px" }}>
-              {suggestions.map((s,i)=><div key={i} className="sg" onMouseDown={()=>search(s)} style={{ padding:"10px 18px", fontSize:"14px", color:"#aaa", borderBottom:i<suggestions.length-1?"1px solid #222":"none" }}>{s}</div>)}
-            </div>}
+            {showSug&&suggestions.length>0&&<div style={{position:"absolute",top:"100%",left:0,right:"90px",zIndex:10,background:"#151515",border:"1px solid #333",borderRadius:"0 0 4px 4px"}}>{suggestions.map((s,i)=><div key={i} className="sg" onMouseDown={()=>search(s)} style={{padding:"10px 18px",fontSize:"14px",color:"#aaa",borderBottom:i<suggestions.length-1?"1px solid #222":"none"}}>{s}</div>)}</div>}
           </div>
 
-          <div style={{ display:"flex", flexWrap:"wrap", gap:"8px", marginBottom:"24px" }}>
-            {allNames.map(b=><span key={b} className="tb" onClick={()=>search(b)} style={{ background:result?.name===b?t.accent:"#1a1a1a", border:`1px solid ${result?.name===b?t.accent:"#2a2a2a"}`, borderRadius:"3px", padding:"5px 12px", fontSize:"12px", color:result?.name===b?"#fff":"#777", fontFamily:"'Oswald',sans-serif", letterSpacing:"1px" }}>{b}</span>)}
+          <div style={{display:"flex",flexWrap:"wrap",gap:"8px",marginBottom:"24px"}}>
+            {allNames.map(b=><span key={b} className="tb" onClick={()=>search(b)} style={{background:result?.name===b?t.accent:"#1a1a1a",border:`1px solid ${result?.name===b?t.accent:"#2a2a2a"}`,borderRadius:"3px",padding:"5px 12px",fontSize:"12px",color:result?.name===b?"#fff":"#777",fontFamily:"'Oswald',sans-serif",letterSpacing:"1px"}}>{b}</span>)}
           </div>
 
-          {loading && <div style={{ textAlign:"center", padding:"60px 0" }}><div style={{ width:"40px", height:"40px", border:"3px solid #222", borderTop:`3px solid ${t.accent}`, borderRadius:"50%", margin:"0 auto 20px", animation:"spin .8s linear infinite" }} /><div style={{ fontFamily:"'Oswald',sans-serif", letterSpacing:"3px", fontSize:"12px", textTransform:"uppercase", color:"#666" }}>Digging through the archives...</div></div>}
+          {loading&&<div style={{textAlign:"center",padding:"60px 0"}}><div style={{width:"40px",height:"40px",border:"3px solid #222",borderTop:`3px solid ${t.accent}`,borderRadius:"50%",margin:"0 auto 20px",animation:"spin .8s linear infinite"}}/><div style={{fontFamily:"'Oswald',sans-serif",letterSpacing:"3px",fontSize:"12px",textTransform:"uppercase",color:"#666"}}>Digging through the archives...</div></div>}
 
-          {error && <div style={{ background:"rgba(196,30,30,0.1)", border:"1px solid #c41e1e", borderRadius:"4px", padding:"16px", color:"#c41e1e", fontSize:"14px", marginBottom:"16px" }}>Could not find that band. Try another search.</div>}
+          {error&&<div style={{background:"rgba(196,30,30,0.1)",border:"1px solid #c41e1e",borderRadius:"4px",padding:"16px",color:"#c41e1e",fontSize:"14px",marginBottom:"16px"}}>Could not find that band. Try another search.</div>}
 
-          {notFound && !loading && <div style={{ background:t.accentBg, border:"1px solid #333", borderRadius:"4px", padding:"24px", textAlign:"center", animation:"slideUp .3s ease" }}>
-            <div style={{ fontSize:"32px", marginBottom:"8px" }}>🤘</div>
-            <div style={{ color:"#888", fontSize:"14px", fontFamily:"'Oswald',sans-serif" }}><strong style={{ color:"#eee" }}>"{query}"</strong> — not a recognized metal/rock band.</div>
-          </div>}
+          {notFound&&!loading&&<div style={{background:t.accentBg,border:"1px solid #333",borderRadius:"4px",padding:"24px",textAlign:"center",animation:"slideUp .3s ease"}}><div style={{fontSize:"32px",marginBottom:"8px"}}>🤘</div><div style={{color:"#888",fontSize:"14px",fontFamily:"'Oswald',sans-serif"}}><strong style={{color:"#eee"}}>"{query}"</strong> — not a recognized metal/rock band.</div></div>}
 
-          {result && !loading && <div key={result.name} style={{ animation:"slideUp .3s ease" }}>
-            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"baseline", marginBottom:"20px", paddingBottom:"12px", borderBottom:`2px solid ${t.accent}`, flexWrap:"wrap", gap:"8px" }}>
-              <div style={{ fontFamily:"'Oswald',sans-serif", fontSize:"28px", fontWeight:700, color:"#fff", textTransform:"uppercase", letterSpacing:"2px" }}>{result.name}</div>
-              <div style={{ display:"flex", gap:"12px", fontSize:"12px", color:"#555", fontFamily:"'Oswald',sans-serif" }}>
-                {result.country&&<span>{result.country}</span>}{result.years&&<span>{result.years}</span>}{result.status&&<span style={{ color:result.status==="Active"?"#4a4":"#666" }}>{result.status}</span>}
+          {result&&!loading&&<div key={result.name} style={{animation:"slideUp .3s ease"}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:"20px",paddingBottom:"12px",borderBottom:`2px solid ${t.accent}`,flexWrap:"wrap",gap:"8px"}}>
+              <div style={{fontFamily:"'Oswald',sans-serif",fontSize:"28px",fontWeight:700,color:"#fff",textTransform:"uppercase",letterSpacing:"2px"}}>{result.name}</div>
+              <div style={{display:"flex",gap:"12px",fontSize:"12px",color:"#555",fontFamily:"'Oswald',sans-serif"}}>{result.country&&<span>{result.country}</span>}{result.years&&<span>{result.years}</span>}{result.status&&<span style={{color:result.status==="Active"?"#4a4":"#666"}}>{result.status}</span>}</div>
+            </div>
+
+            {result.overview&&<SectionCard title="Overview" icon="⚡" delay={0.05} accent={t.accent}>{result.overview}</SectionCard>}
+            {result.genreDetail&&<SectionCard title="Genre & Style" icon="🎸" delay={0.08} accent={t.accent}>{result.genreDetail}</SectionCard>}
+            {result.scene&&<SectionCard title="Scene & Context" icon="📍" delay={0.1} accent={t.accent}>{result.scene}</SectionCard>}
+            {result.historicalContext&&<SectionCard title="Historical Context" icon="📜" delay={0.12} accent={t.accent}>{result.historicalContext}</SectionCard>}
+
+            {result.startHere&&<SectionCard title="Start Here" icon="▶" delay={0.14} accent={t.accent}>
+              <div style={{marginBottom:"8px"}}><span style={{color:t.accent,fontFamily:"'Oswald',sans-serif",fontSize:"11px",letterSpacing:"2px"}}>NEW TO THIS BAND</span><div style={{marginTop:"4px"}}>{result.startHere.newcomer}</div></div>
+              <div><span style={{color:t.accent,fontFamily:"'Oswald',sans-serif",fontSize:"11px",letterSpacing:"2px"}}>GOING DEEPER</span><div style={{marginTop:"4px"}}>{result.startHere.deep}</div></div>
+            </SectionCard>}
+
+            {result.albums?.length>0&&<SectionCard title="Essential Albums" icon="💿" delay={0.16} accent={t.accent}>
+              {result.albums.map((a,i)=><div key={i} style={{marginBottom:"12px",paddingLeft:"14px",position:"relative",paddingBottom:i<result.albums.length-1?"12px":"0",borderBottom:i<result.albums.length-1?"1px solid #1a1a1a":"none"}}>
+                <span style={{color:t.accent,position:"absolute",left:0,fontWeight:700}}>›</span>
+                <strong style={{color:"#fff"}}>{a.title}</strong> <span style={{color:"#555"}}>({a.year})</span> — {a.note}
+                <div style={{display:"flex",gap:"16px",marginTop:"4px",fontSize:"12px",color:"#666",flexWrap:"wrap"}}>
+                  {a.producer&&<span>Producer: <span style={{color:"#999"}}>{a.producer}</span></span>}
+                  {a.studio&&<span>Studio: <span style={{color:"#999"}}>{a.studio}</span></span>}
+                  {a.tuning&&<span>Tuning: <span style={{color:"#999"}}>{a.tuning}</span></span>}
+                </div>
+              </div>)}
+            </SectionCard>}
+
+            {result.members?.length>0&&<SectionCard title="Members & Gear" icon="🤘" delay={0.2} accent={t.accent}>
+              {result.members.map((m,i)=><div key={i} className="mc" style={{background:"rgba(15,15,15,0.8)",border:"1px solid #222",borderRadius:"4px",padding:"12px 14px",marginBottom:"10px",transition:"border-color .2s"}}>
+                <div style={{marginBottom:"4px"}}><strong style={{color:"#fff",fontSize:"15px"}}>{m.name}</strong><span style={{color:t.accent,fontSize:"11px",marginLeft:"8px",fontFamily:"'Oswald',sans-serif",letterSpacing:"1px"}}>{m.role}</span></div>
+                <div style={{color:"#999",fontSize:"13px",lineHeight:"1.6"}}>{m.contribution}</div>
+                {m.gear&&<div style={{color:"#777",fontSize:"12px",marginTop:"6px",paddingTop:"6px",borderTop:"1px solid #1a1a1a"}}><span style={{color:t.accent,fontFamily:"'Oswald',sans-serif",fontSize:"10px",letterSpacing:"2px"}}>GEAR</span> <span style={{marginLeft:"8px"}}>{m.gear}</span></div>}
+              </div>)}
+            </SectionCard>}
+
+            {result.sideProjects?.length>0&&<SectionCard title="Side Projects" icon="🔀" delay={0.22} accent={t.accent}>
+              {result.sideProjects.map((sp,i)=><div key={i} style={{marginBottom:"8px",paddingLeft:"14px",position:"relative"}}>
+                <span style={{color:t.accent,position:"absolute",left:0,fontWeight:700}}>›</span>
+                <strong style={{color:"#fff"}}>{sp.member}</strong> <span style={{color:"#999"}}>— {sp.projects}</span>
+              </div>)}
+            </SectionCard>}
+
+            {result.deepCuts?.length>0&&<SectionCard title="Deep Cuts — Tracks You Might Have Missed" icon="💎" delay={0.24} accent={t.accent}>
+              {result.deepCuts.map((dc,i)=><div key={i} style={{marginBottom:"10px",paddingLeft:"14px",position:"relative"}}>
+                <span style={{color:t.accent,position:"absolute",left:0,fontWeight:700}}>›</span>
+                <strong style={{color:"#fff"}}>{dc.track}</strong> <span style={{color:"#555"}}>from {dc.album}</span>
+                <div style={{color:"#999",fontSize:"13px",marginTop:"2px"}}>{dc.why}</div>
+              </div>)}
+            </SectionCard>}
+
+            {result.moodPicks&&<SectionCard title="Mood Picks — What To Play When..." icon="🎧" delay={0.26} accent={t.accent}>
+              {[["aggressive","🔥 Maximum Aggression"],["atmospheric","🌫 Atmosphere & Mood"],["technical","⚙ Technical Showcase"],["melancholic","🖤 Dark & Introspective"]].map(([key,label])=>result.moodPicks[key]&&<div key={key} style={{marginBottom:"8px"}}><span style={{color:t.accent,fontSize:"12px"}}>{label}:</span> <span style={{color:"#ccc",marginLeft:"4px"}}>{result.moodPicks[key]}</span></div>)}
+            </SectionCard>}
+
+            {result.timeline?.length>0&&<SectionCard title="Timeline" icon="📅" delay={0.28} accent={t.accent}>
+              <div style={{borderLeft:`2px solid ${t.accent}33`,paddingLeft:"16px",marginLeft:"4px"}}>
+                {result.timeline.map((ev,i)=><div key={i} style={{marginBottom:"10px",position:"relative"}}>
+                  <div style={{position:"absolute",left:"-22px",top:"4px",width:"10px",height:"10px",borderRadius:"50%",background:t.accent,border:"2px solid #0a0a0a"}}/>
+                  <span style={{color:t.accent,fontFamily:"'Oswald',sans-serif",fontSize:"13px",fontWeight:600}}>{ev.year}</span>
+                  <div style={{color:"#999",fontSize:"13px",marginTop:"2px"}}>{ev.event}</div>
+                </div>)}
               </div>
-            </div>
-            {result.overview && <SectionCard title="Overview" icon="⚡" delay={0.05} accent={t.accent}>{result.overview}</SectionCard>}
-            {result.genreDetail && <SectionCard title="Genre & Style" icon="🎸" delay={0.1} accent={t.accent}>{result.genreDetail}</SectionCard>}
-            {result.albums?.length>0 && <SectionCard title="Essential Albums" icon="💿" delay={0.15} accent={t.accent}>{result.albums.map((a,i)=><div key={i} style={{ marginBottom:"8px", paddingLeft:"14px", position:"relative" }}><span style={{ color:t.accent, position:"absolute", left:0, fontWeight:700 }}>›</span><strong style={{ color:"#fff" }}>{a.title}</strong> <span style={{ color:"#555" }}>({a.year})</span> — {a.note}</div>)}</SectionCard>}
-            {result.members?.length>0 && <SectionCard title="Members & Contributions" icon="🤘" delay={0.2} accent={t.accent}>{result.members.map((m,i)=><div key={i} className="mc" style={{ background:"rgba(15,15,15,0.8)", border:"1px solid #222", borderRadius:"4px", padding:"12px 14px", marginBottom:"10px", transition:"border-color .2s" }}><div style={{ marginBottom:"4px" }}><strong style={{ color:"#fff", fontSize:"15px" }}>{m.name}</strong><span style={{ color:t.accent, fontSize:"11px", marginLeft:"8px", fontFamily:"'Oswald',sans-serif", letterSpacing:"1px" }}>{m.role}</span></div><div style={{ color:"#999", fontSize:"13px", lineHeight:"1.6" }}>{m.contribution}</div></div>)}</SectionCard>}
-            {result.similar?.length>0 && <SectionCard title="Similar Bands" icon="→" delay={0.25} accent={t.accent}>{result.similar.map((s,i)=><span key={i} className="tb" onClick={()=>search(s)} style={{ display:"inline-block", background:"#1a1a1a", border:"1px solid #2a2a2a", borderRadius:"3px", padding:"4px 12px", fontSize:"12px", marginRight:"6px", marginBottom:"6px", color:"#fff", cursor:"pointer" }}>{s}</span>)}</SectionCard>}
-            {result.funfacts?.length>0 && <SectionCard title="Fun Facts & Deep Cuts" icon="💀" delay={0.3} accent={t.accent}>{result.funfacts.map((f,i)=><div key={i} style={{ marginBottom:i<result.funfacts.length-1?"12px":0, paddingBottom:i<result.funfacts.length-1?"12px":0, borderBottom:i<result.funfacts.length-1?"1px solid #1a1a1a":"none", paddingLeft:"18px", position:"relative" }}><span style={{ color:t.accent, position:"absolute", left:0, fontFamily:"'Oswald',sans-serif", fontSize:"11px" }}>0{i+1}</span>{f}</div>)}</SectionCard>}
+            </SectionCard>}
+
+            {result.similar?.length>0&&<SectionCard title="Similar Bands" icon="→" delay={0.3} accent={t.accent}>
+              {result.similar.map((s,i)=><span key={i} className="tb" onClick={()=>search(s)} style={{display:"inline-block",background:"#1a1a1a",border:"1px solid #2a2a2a",borderRadius:"3px",padding:"4px 12px",fontSize:"12px",marginRight:"6px",marginBottom:"6px",color:"#fff",cursor:"pointer"}}>{s}</span>)}
+            </SectionCard>}
+
+            {result.controversies?.length>0&&<SectionCard title="Controversies & Drama" icon="⚠" delay={0.32} accent={t.accent}>
+              {result.controversies.map((c,i)=><div key={i} style={{marginBottom:i<result.controversies.length-1?"10px":"0",paddingBottom:i<result.controversies.length-1?"10px":"0",borderBottom:i<result.controversies.length-1?"1px solid #1a1a1a":"none",paddingLeft:"14px",position:"relative"}}>
+                <span style={{color:t.accent,position:"absolute",left:0,fontFamily:"'Oswald',sans-serif",fontSize:"11px"}}>!</span>{c}
+              </div>)}
+            </SectionCard>}
+
+            {result.funfacts?.length>0&&<SectionCard title="Fun Facts & Deep Cuts" icon="💀" delay={0.34} accent={t.accent}>
+              {result.funfacts.map((f,i)=><div key={i} style={{marginBottom:i<result.funfacts.length-1?"12px":"0",paddingBottom:i<result.funfacts.length-1?"12px":"0",borderBottom:i<result.funfacts.length-1?"1px solid #1a1a1a":"none",paddingLeft:"18px",position:"relative"}}><span style={{color:t.accent,position:"absolute",left:0,fontFamily:"'Oswald',sans-serif",fontSize:"11px"}}>0{i+1}</span>{f}</div>)}
+            </SectionCard>}
           </div>}
         </div>}
 
-        {tab==="genres" && <div style={{ animation:"slideUp .3s ease" }}><div style={{ color:"#555", fontSize:"13px", marginBottom:"16px" }}>Click ▶ to expand subgenres. Trace metal's full evolution.</div><GenreNode node={GENRE_TREE} depth={0} accent={t.accent} expanded={genreExp} toggleExpand={id=>setGenreExp(p=>({...p,[id]:!p[id]}))} /></div>}
-        {tab==="versus" && <div style={{ animation:"slideUp .3s ease" }}><VersusMode bandCache={bandCache} accent={t.accent} /></div>}
-        {tab==="influence" && <div style={{ animation:"slideUp .3s ease" }}><InfluenceMap bandCache={bandCache} accent={t.accent} /></div>}
+        {tab==="genres"&&<div style={{animation:"slideUp .3s ease"}}><div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>Click ▶ to expand. Trace metal's full evolution.</div><GenreNode node={GENRE_TREE} depth={0} accent={t.accent} expanded={genreExp} toggleExpand={id=>setGenreExp(p=>({...p,[id]:!p[id]}))}/></div>}
+        {tab==="versus"&&<div style={{animation:"slideUp .3s ease"}}><VersusMode bandCache={bandCache} accent={t.accent}/></div>}
+        {tab==="influence"&&<div style={{animation:"slideUp .3s ease"}}><InfluenceMap bandCache={bandCache} accent={t.accent}/></div>}
 
-        <div style={{ marginTop:"60px", textAlign:"center", fontSize:"10px", color:"#222", letterSpacing:"2px", fontFamily:"'Oswald',sans-serif", textTransform:"uppercase" }}>Metal Encyclopedia • AI-Powered</div>
+        <div style={{marginTop:"60px",textAlign:"center",fontSize:"10px",color:"#222",letterSpacing:"2px",fontFamily:"'Oswald',sans-serif",textTransform:"uppercase"}}>Metal Encyclopedia • AI-Powered</div>
       </div>
     </div>
   );
