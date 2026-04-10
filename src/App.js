@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 // ─── THEME ───
 const THEMES = {
@@ -65,7 +65,7 @@ const LOCAL_BANDS = {
   "emperor": { name: "Emperor", country: "Norway", years: "1991-2001", status: "Sporadic reunions", genre: "Symphonic Black Metal", overview: "Took black metal from lo-fi minimalism to symphonic grandeur.", genreDetail: "Orchestral keyboards, complex compositions, black metal intensity.", albums: [{ title: "In the Nightside Eclipse", year: 1994, note: "Symphonic black metal invented." },{ title: "Anthems to the Welkin at Dusk", year: 1997, note: "Tighter, more technical. Perfect." }], members: [{ name: "Ihsahn", role: "Vocals, Guitar, Keys", contribution: "Emperor's visionary. Multi-instrumentalist. Solo career blends BM with saxophone." },{ name: "Samoth", role: "Guitar", contribution: "Riff engine. Tremolo-picking on Nightside Eclipse is foundational." }], similar: ["Ihsahn","Satyricon","Dimmu Borgir","Limbonic Art","Arcturus"], influences: { inspired_by: ["Bathory","Mayhem","Tchaikovsky"], influenced: ["Dimmu Borgir","Cradle of Filth","Symphonic BM"] }, funfacts: ["Ihsahn lives suburban life in Notodden. Vintage synths, Hi-Fi obsession.","History includes murder (Faust), church burnings (Samoth).","Ihsahn introduced saxophone to BM. Purists lost their minds. It was incredible."] },
 };
 
-// const ALL_LOCAL_NAMES removed
+const ALL_LOCAL_NAMES = Object.values(LOCAL_BANDS).map(b => b.name);
 
 // ─── FUZZY SEARCH ───
 function fuzzyMatch(query, target) {
