@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
-        model: 'claude-opus-4-6', max_tokens: 4000,
+        model: 'claude-3-5-sonnet-latest', max_tokens: 4000,
         messages: [{ role: 'user', content: `You are Music Encyclopedia AI — an expert covering ALL music that connects to the heavy metal family tree. This includes blues, jazz, rock and roll, psychedelic rock, progressive rock, punk, hardcore, and every subgenre of metal. Treat every artist equally — Robert Johnson gets the same depth as Slayer.
 
 Return ONLY valid JSON about "${band}". No markdown, no backticks.

@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
-        model: 'claude-opus-4-6', max_tokens: 3000,
+        model: 'claude-3-5-sonnet-latest', max_tokens: 3000,
         messages: [{ role: 'user', content: `You are Metal Encyclopedia AI. Return ONLY valid JSON about the album "${album}" by "${band}". No markdown, no backticks.
 {"album":"","band":"","year":0,"label":"","producer":"","studio":"","tuning":"","length":"total runtime","tracks":[{"number":1,"title":"","duration":"4:32","writers":"songwriting credits","notes":"1 sentence about this track","personnel":"who plays what if notable"}],"lineup":[{"name":"","instrument":""}],"guestMusicians":[{"name":"","contribution":""}],"albumNotes":"2-3 sentences about recording/significance"}
 Include ALL tracks. Be factual with durations and credits. If exact credits unknown, credit the band.` }],
