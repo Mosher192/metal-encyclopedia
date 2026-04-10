@@ -213,7 +213,7 @@ function App(){
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"32px",flexWrap:"wrap",gap:"12px"}}>
           <div>
             <div style={{fontFamily:"'Metal Mania',system-ui",fontSize:"clamp(28px,7vw,48px)",color:t.accent,letterSpacing:"2px",lineHeight:1.1,textShadow:`0 0 40px ${t.accentGlow},0 2px 0 #000`}}>METAL ENCYCLOPEDIA</div>
-            <div style={{fontFamily:"'Oswald',sans-serif",fontSize:"10px",letterSpacing:"5px",textTransform:"uppercase",color:"#555",marginTop:"4px"}}>AI-Powered • From Blues to Brutal Death • No Posers</div>
+            <div style={{fontFamily:"'Oswald',sans-serif",fontSize:"10px",letterSpacing:"5px",textTransform:"uppercase",color:"#555",marginTop:"4px"}}>AI-Powered • From Blues to Brutal Death </div>
           </div>
           <button onClick={()=>setTheme(theme==="blood"?"frost":"blood")} style={{background:"#151515",border:`1px solid ${t.accent}`,borderRadius:"4px",padding:"6px 14px",color:t.accent,fontSize:"11px",cursor:"pointer",fontFamily:"'Oswald',sans-serif",letterSpacing:"2px",textTransform:"uppercase"}}>{THEMES[theme==="blood"?"frost":"blood"].name}</button>
         </div>
