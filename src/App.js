@@ -114,8 +114,50 @@ function GenreNode({node,depth,accent,expanded,toggleExpand,onBandClick}){
   </div>);
 }
 
-function VersusMode({bandCache,accent}){const[left,setLeft]=useState("");const[right,setRight]=useState("");const names=Object.values(bandCache).map(b=>b.name);const bL=bandCache[left.toLowerCase()],bR=bandCache[right.toLowerCase()];const ss={flex:1,minWidth:"140px",background:"#151515",border:"1px solid #333",borderRadius:"4px",padding:"10px 14px",color:"#eee",fontSize:"14px",fontFamily:"'Source Sans 3',sans-serif",outline:"none",cursor:"pointer",appearance:"none"};return(<div><div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>Pick two bands to compare.</div><div style={{display:"flex",gap:"12px",marginBottom:"20px",flexWrap:"wrap",alignItems:"center"}}><select value={left} onChange={e=>setLeft(e.target.value)} style={ss}><option value="">Band 1...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select><div style={{color:accent,fontFamily:"'Metal Mania',system-ui",fontSize:"24px"}}>VS</div><select value={right} onChange={e=>setRight(e.target.value)} style={ss}><option value="">Band 2...</option>{names.map(n=><option key={n} value={n}>{n}</option>)}</select></div>{bL&&bR&&<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"12px"}}>{[bL,bR].map((b,i)=>(<div key={i} style={{background:"#111",border:"1px solid #282828",borderRadius:"4px",padding:"16px",animation:`slideUp 0.3s ease ${i*0.1}s both`}}><div style={{fontFamily:"'Oswald',sans-serif",fontSize:"20px",color:"#fff",textTransform:"uppercase",letterSpacing:"2px",marginBottom:"12px",borderBottom:`2px solid ${accent}`,paddingBottom:"8px"}}>{b.name}</div>{[["Country",b.country],["Years",b.years],["Status",b.status],["Genre",b.genre],["Albums",String(b.albums?.length||0)]].map(([l,v])=><div key={l} style={{display:"flex",justifyContent:"space-between",marginBottom:"6px",fontSize:"13px"}}><span style={{color:"#666"}}>{l}</span><span style={{color:"#ccc"}}>{v}</span></div>)}<div style={{marginTop:"12px"}}><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif",marginBottom:"6px"}}>Key Albums</div>{(b.albums||[]).slice(0,3).map((a,j)=><div key={j} style={{color:"#999",fontSize:"12px",marginBottom:"2px"}}><span style={{color:"#fff"}}>{a.title}</span> <span style={{color:"#555"}}>({a.year})</span></div>)}</div></div>))}</div>}</div>);}
+function VersusMode({bandCache,accent,onSearch}){
+  const[leftQ,setLeftQ]=useState("");const[rightQ,setRightQ]=useState("");
+  const[leftBand,setLeftBand]=useState(null);const[rightBand,setRightBand]=useState(null);
+  const[leftLoading,setLeftLoading]=useState(false);const[rightLoading,setRightLoading]=useState(false);
+  const[leftErr,setLeftErr]=useState("");const[rightErr,setRightErr]=useState("");
 
+  const doSearch=async(side,name)=>{
+    const q=name.trim();if(!q)return;
+    const key=q.toLowerCase();
+    const setB=side==="left"?setLeftBand:setRightBand;
+    const setL=side==="left"?setLeftLoading:setRightLoading;
+    const setE=side==="left"?setLeftErr:setRightErr;
+    if(side==="left")setLeftQ(q);else setRightQ(q);
+    if(bandCache[key]){setB(bandCache[key]);return;}
+    setL(true);setE("");setB(null);
+    try{const data=await searchBandBackend(q);if(data.error==="not_found"){setE("Not found.");}else{setB(data);if(onSearch)onSearch(key,data);}}catch(e){setE(e.message);}setL(false);
+  };
+
+  const renderSide=(band,loading,err)=>{
+    if(loading)return <div style={{padding:"30px",textAlign:"center"}}><div style={{width:"24px",height:"24px",border:"2px solid #222",borderTop:`2px solid ${accent}`,borderRadius:"50%",margin:"0 auto",animation:"spin .8s linear infinite"}}/></div>;
+    if(err)return <div style={{color:"#c41e1e",fontSize:"13px",padding:"16px",textAlign:"center"}}>{err}</div>;
+    if(!band)return <div style={{color:"#444",fontSize:"13px",padding:"30px",textAlign:"center"}}>Search for a band above</div>;
+    return(<div>
+      <div style={{fontFamily:"'Oswald',sans-serif",fontSize:"20px",color:"#fff",textTransform:"uppercase",letterSpacing:"2px",marginBottom:"12px",borderBottom:`2px solid ${accent}`,paddingBottom:"8px"}}>{band.name}</div>
+      {[["Country",band.country],["Years",band.years],["Status",band.status],["Genre",band.genre],["Albums",String(band.albums?.length||0)],["Members",String(band.members?.length||0)]].map(([l,v])=><div key={l} style={{display:"flex",justifyContent:"space-between",marginBottom:"6px",fontSize:"13px"}}><span style={{color:"#666"}}>{l}</span><span style={{color:"#ccc"}}>{v}</span></div>)}
+      <div style={{marginTop:"12px"}}><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif",marginBottom:"6px"}}>Key Albums</div>{(band.albums||[]).slice(0,4).map((a,j)=><div key={j} style={{color:"#999",fontSize:"12px",marginBottom:"2px"}}><span style={{color:"#fff"}}>{a.title}</span> <span style={{color:"#555"}}>({a.year})</span></div>)}</div>
+      {band.members&&<div style={{marginTop:"12px"}}><div style={{color:"#555",fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",fontFamily:"'Oswald',sans-serif",marginBottom:"6px"}}>Members</div>{(band.members||[]).slice(0,5).map((m,j)=><div key={j} style={{color:"#999",fontSize:"12px",marginBottom:"2px"}}><span style={{color:"#fff"}}>{m.name}</span> <span style={{color:"#666"}}>{m.role}</span></div>)}</div>}
+    </div>);
+  };
+
+  const is={background:"#151515",border:"1px solid #333",borderRadius:"4px",padding:"10px 14px",color:"#eee",fontSize:"14px",fontFamily:"'Source Sans 3',sans-serif",outline:"none",flex:1,minWidth:"100px"};
+  return(<div>
+    <div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>Search any two bands to compare them side by side.</div>
+    <div style={{display:"grid",gridTemplateColumns:"1fr auto 1fr",gap:"12px",alignItems:"center",marginBottom:"20px"}}>
+      <div style={{display:"flex",gap:"6px"}}><input value={leftQ} onChange={e=>setLeftQ(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")doSearch("left",leftQ)}} placeholder="Band 1..." style={is}/><button onClick={()=>doSearch("left",leftQ)} style={{background:accent,color:"#fff",border:"none",borderRadius:"4px",padding:"10px 14px",cursor:"pointer",fontFamily:"'Oswald',sans-serif",fontSize:"12px",letterSpacing:"1px"}}>GO</button></div>
+      <div style={{color:accent,fontFamily:"'Metal Mania',system-ui",fontSize:"24px"}}>VS</div>
+      <div style={{display:"flex",gap:"6px"}}><input value={rightQ} onChange={e=>setRightQ(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")doSearch("right",rightQ)}} placeholder="Band 2..." style={is}/><button onClick={()=>doSearch("right",rightQ)} style={{background:accent,color:"#fff",border:"none",borderRadius:"4px",padding:"10px 14px",cursor:"pointer",fontFamily:"'Oswald',sans-serif",fontSize:"12px",letterSpacing:"1px"}}>GO</button></div>
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"12px"}}>
+      <div style={{background:"#111",border:"1px solid #282828",borderRadius:"4px",padding:"16px",minHeight:"200px"}}>{renderSide(leftBand,leftLoading,leftErr)}</div>
+      <div style={{background:"#111",border:"1px solid #282828",borderRadius:"4px",padding:"16px",minHeight:"200px"}}>{renderSide(rightBand,rightLoading,rightErr)}</div>
+    </div>
+  </div>);
+}
 function InfluenceMap({bandCache,accent,onSearch}){
   const[input,setInput]=useState("");
   const[band,setBand]=useState(null);
@@ -211,7 +253,7 @@ function App(){
         </div>}
 
         {tab==="genres"&&<div style={{animation:"slideUp .3s ease"}}><div style={{color:"#555",fontSize:"13px",marginBottom:"16px"}}>The complete evolution of heavy music — from Delta blues to modern metal. Click ▶ to expand. Click any band name to look them up.</div><GenreNode node={GENRE_TREE} depth={0} accent={t.accent} expanded={genreExp} toggleExpand={id=>setGenreExp(p=>({...p,[id]:!p[id]}))} onBandClick={b=>search(b)}/></div>}
-        {tab==="versus"&&<div style={{animation:"slideUp .3s ease"}}><VersusMode bandCache={bandCache} accent={t.accent}/></div>}
+        {tab==="versus"&&<div style={{animation:"slideUp .3s ease"}}><VersusMode bandCache={bandCache} accent={t.accent} onSearch={(k,d)=>addToCache(k,d)}/></div>}
         {tab==="influence"&&<div style={{animation:"slideUp .3s ease"}}><InfluenceMap bandCache={bandCache} accent={t.accent} onSearch={(k,d)=>addToCache(k,d)}/></div>}
 
         <div style={{marginTop:"60px",textAlign:"center",fontSize:"10px",color:"#222",letterSpacing:"2px",fontFamily:"'Oswald',sans-serif",textTransform:"uppercase"}}>Metal Encyclopedia • AI-Powered</div>
